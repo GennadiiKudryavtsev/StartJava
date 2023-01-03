@@ -5,131 +5,119 @@ public class VariablesTheme {
 
         byte modelMac = 13;
         short memory = 8;
-        int disk= 256;
+        int disk = 256;
         long graphics = 6501536;
         float processor = 3.1f;
         double version = 10.14;
         char ch = 'M';
         boolean quality = true;
 
-        System.out.println("Модель mac = " + modelMac);
-        System.out.println("Память = " + memory);
-        System.out.println("Память на диске = " + disk);
-        System.out.println("Графика = " + graphics);
-        System.out.println("Процессор = " + processor);
-        System.out.println("Номер версии = " + version);
-        System.out.println("Первая буква устройства = " + ch);
-        System.out.println("Качество = " + quality);
-        System.out.println("");
+        System.out.println("Модель mac = " + modelMac + '\n' + "Память = " + memory + '\n'
+                + "Память на диске = " + disk + '\n' + "Графика = " + graphics + '\n'
+                + "Процессор = " + processor + '\n' + "Номер версии = " + version + '\n'
+                + "Первая буква устройства = " + ch + '\n' + "Качество = " + quality + '\n');
 
         System.out.println("2. Расчет стоимости товара со скидкой");
 
-        int pen = 100;
-        int book = 200;
-        int sumDiscount = (pen + book) * 11/100;
-        int sumWithDiscount = pen + book - sumDiscount;
+        int penPrice = 100;
+        int bookPrice = 200;
+        int discountSum = (penPrice + bookPrice) * 11 / 100;
+        int discountPrice = penPrice + bookPrice - discountSum;
 
-        System.out.println(sumDiscount);
-        System.out.println(sumWithDiscount);
-        System.out.println("");
+        System.out.println("Сумма скидки = " + discountSum + " " + '\n' + "Общая стоимость товаров со скидкой = " 
+                + discountPrice + '\n');
 
         System.out.println("3. Вывод слова JAVA");
 
-        System.out.println("   J    a  V     V  a");
-        System.out.println("   J   a a  V   V  a a");
-        System.out.println("J  J  aaaaa  V V  aaaaa");
-        System.out.println(" JJ  a     a  V  a     a");
-        System.out.println("");
+        System.out.println("   J    a  V     V  a\n"
+                + "   J   a a  V   V  a a\n" 
+                + "J  J  aaaaa  V V  aaaaa\n"
+                + " JJ  a     a  V  a     a\n");
 
         System.out.println("4. Вывод min и max значений целых числовых типов");
 
-        byte b = 126;
-        short sh = 32766;
-        int in = 2147483646;
-        long ln = 9223372036854775806L;
+        byte valueByte = 127;
+        short valueShort = 32767;
+        int valueInt = 2147483647;
+        long valueLong = 9223372036854775807L;
 
-        System.out.println(b);
-        System.out.println(++b);
-        System.out.println(--b);
-
-        System.out.println(sh);
-        System.out.println(++sh);
-        System.out.println(--sh);
-
-        System.out.println(in);
-        System.out.println(++in);
-        System.out.println(--in);
-
-        System.out.println(ln);
-        System.out.println(++ln);
-        System.out.println(--ln);
-        System.out.println("");
+        System.out.println("Максимальное число типа byte = " + valueByte + "" + '\n' 
+                + "Увеличили максимальное число типа byte на 1 = " 
+                + ++valueByte + "" + '\n' + "Уменьшили максимальное число типа byte на 1 = " 
+                + --valueByte + "" + '\n' + "Максимальное число типа short = " + valueShort + "" + '\n' 
+                + "Увеличили максимальное число типа short на 1 = " + ++valueShort + "" + '\n' 
+                + "Уменьшили максимальное число типа short на 1 = " + --valueShort + "" + '\n'
+                + "Максимальное число типа int = " + valueInt + "" + '\n' + "Увеличили максимальное число типа int на 1 = " 
+                + ++valueInt + '\n' + "" +"Уменьшили максимальное число типа int на 1 = " + --valueInt + '\n' + ""
+                + "Максимальное число типа long = " + "" + '\n' + "Увеличили максимальное число типа long на 1 = " 
+                + ++valueLong + "" + '\n' + "Уменьшили максимальное число типа long на 1 = " + --valueLong + '\n');
 
         System.out.println("5. Перестановка значений переменных");
 
-        int t = 2;
-        int f = 5;
+        int firstVariable = 2;
+        int secondVariable = 5;
         System.out.println("- с помощью третьей переменной");
-        int p = t;
-        t = f;
-        f = p; 
-        System.out.println(t + "" + '\n' + f + '\n');
+        int thirdVariable = firstVariable;
+        firstVariable = secondVariable;
+        secondVariable = thirdVariable; 
+        System.out.println(firstVariable + "" + '\n' + secondVariable + '\n');
 
         System.out.println("- с помощью арифметических операций");
-        t = t + f; // 5 + 2 = 7
-        f = t - f; // 7 - 2 = 5
-        t = t - f; // 7 - 5 = 2
-        System.out.println(t + "" + '\n' + f + '\n');
+        firstVariable = firstVariable + secondVariable; // 5 + 2 = 7
+        secondVariable = firstVariable - secondVariable; // 7 - 2 = 5
+        firstVariable = firstVariable - secondVariable; // 7 - 5 = 2
+        System.out.println(firstVariable + "" + '\n' + secondVariable + '\n');
 
         System.out.println("- с помощью арифметических операций");
-        t = t ^ f;
-        f = t ^ f;
-        t = t ^ f;
-        System.out.println(t + "" + '\n' + f + '\n');
+        firstVariable = firstVariable ^ secondVariable;
+        secondVariable = firstVariable ^ secondVariable;
+        firstVariable = firstVariable ^ secondVariable;
+        System.out.println(firstVariable + "" + '\n' + secondVariable + '\n');
 
         System.out.println("6. Вывод символов и их кодов");
 
-        char a = '"';
-        char o = '&';
-        char c = '@';
-        char d = '^';
-        char e = '_';
-        System.out.println("35 = " + a + '\n' + "38 = " + o + '\n' + 
-            "64 = " + c + '\n' + "94 = " + d + '\n' + "95 = " + e + '\n');
+        char symbol35 = '"';
+        char symbol38 = '&';
+        char symbol64 = '@';
+        char symbol94 = '^';
+        char symbol95 = '_';
+        System.out.println("Символ кода 35 = " + symbol35 + '\n' + "Символ кода 38 = " + symbol38 + '\n' 
+                + "Символ кода 64 = " + symbol64 + '\n' + "Символ кода 94 = " + symbol94 + '\n' 
+                + "Символ кода 95 = " + symbol95 + '\n');
 
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
 
-        char sim = '/';
-        char sim1 = '\\';
-        char sim2 = '_';
-        char sim3 = '(';
-        char sim4 = ')';
-        System.out.println("    " + sim + sim1);
-        System.out.println("   " + sim + "  " + sim1);
-        System.out.println("  " + sim + sim2 + sim3 + " " + sim4 + sim1);
-        System.out.println(" " + sim + "      " + sim1);
-        System.out.println(sim + "" + sim2 + sim2 + sim2 + sim2 + sim + 
-            sim1 + sim2 + sim2 + sim1 + '\n');
+        char symbol1 = '/';
+        char symbol2 = '\\';
+        char symbol3 = '_';
+        char symbol4 = '(';
+        char symbol5 = ')';
+        System.out.println("    " + symbol1 + symbol2);
+        System.out.println("   " + symbol1 + "  " + symbol2);
+        System.out.println("  " + symbol1 + symbol3 + symbol4 + " " + symbol5 + symbol2);
+        System.out.println(" " + symbol1 + "      " + symbol2);
+        System.out.println(symbol1 + "" + symbol3 + symbol3 + symbol3 + symbol3 + symbol1 + 
+                symbol2 + symbol3 + symbol3 + symbol2 + '\n');
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
 
-        int num = 123;
-        int num2 = num % 1000 / 100;
-        int num3 = num % 100 / 10;
-        int num4 = num % 10;
-        int numSum = num2 + num3 + num4;
-        int numPro = num2 * num3 * num4;
-        System.out.println("Число 123 содержит:\n" + num2 + " сотен\n"
-                + num3 + " десятков\n" + num4 + " единиц\n" 
-                + "Сумма его цифр = " + numSum + '\n' 
-                + "Произведение = " + numPro + '\n');
+        int value123 = 123;
+        int hundredValue = value123/ 100;
+        int tenValue = value123 % 100 / 10;
+        int unitValue = value123 % 10;
+        int sumDigits = hundredValue + tenValue + unitValue;
+        int prodDigits = hundredValue * tenValue * unitValue;
+        System.out.println("Число 123 содержит:\n" + hundredValue + " сотен\n"
+                + tenValue + " десятков\n" + unitValue + " единиц\n" 
+                + "Сумма его цифр = " + sumDigits + '\n' 
+                + "Произведение = " + prodDigits + '\n');
 
         System.out.println("9. Вывод времени");
 
         int sec = 86399;
-        int h = sec / 3600;
+        int hour = sec / 3600;
         int min = (sec % 3600) / 60;
         int second = sec % 60;
-        System.out.println(h + ":" + min + ":" + second + '\n');
+        System.out.println(hour + ":" + min + ":" + second + '\n');
     }
 }
