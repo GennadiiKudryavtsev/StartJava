@@ -76,14 +76,9 @@ public class VariablesTheme {
 
         System.out.println("6. Вывод символов и их кодов");
 
-        char symbol35 = '"';
-        char symbol38 = '&';
-        char symbol64 = '@';
-        char symbol94 = '^';
-        char symbol95 = '_';
-        System.out.println("Символ кода 35 = " + symbol35 + '\n' + "Символ кода 38 = " + symbol38 + '\n' 
-                + "Символ кода 64 = " + symbol64 + '\n' + "Символ кода 94 = " + symbol94 + '\n' 
-                + "Символ кода 95 = " + symbol95 + '\n');
+        System.out.println("Символ кода 35 = " + (char) 35 + '\n' + "Символ кода 38 = " + (char) 38 + '\n' 
+                + "Символ кода 64 = " + (char) 64 + '\n' + "Символ кода 94 = " + (char) 94 + '\n' 
+                + "Символ кода 95 = " + (char) 95 + '\n');
 
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
 
