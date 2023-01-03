@@ -36,74 +36,79 @@ public class VariablesTheme {
 
         System.out.println("4. Вывод min и max значений целых числовых типов");
 
-        byte valueByte = 127;
-        short valueShort = 32767;
-        int valueInt = 2147483647;
-        long valueLong = 9223372036854775807L;
+        byte maxByte = 127;
+        short maxShort = 32767;
+        int maxInt = 2147483647;
+        long maxLong = 9223372036854775807L;
 
-        System.out.println("Максимальное число типа byte = " + valueByte + "" + '\n' 
+        System.out.println("Максимальное число типа byte = " + maxByte + "" + '\n' 
                 + "Увеличили максимальное число типа byte на 1 = " 
-                + ++valueByte + "" + '\n' + "Уменьшили максимальное число типа byte на 1 = " 
-                + --valueByte + "" + '\n' + "Максимальное число типа short = " + valueShort + "" + '\n' 
-                + "Увеличили максимальное число типа short на 1 = " + ++valueShort + "" + '\n' 
-                + "Уменьшили максимальное число типа short на 1 = " + --valueShort + "" + '\n'
-                + "Максимальное число типа int = " + valueInt + "" + '\n' + "Увеличили максимальное число типа int на 1 = " 
-                + ++valueInt + '\n' + "" +"Уменьшили максимальное число типа int на 1 = " + --valueInt + '\n' + ""
-                + "Максимальное число типа long = " + "" + '\n' + "Увеличили максимальное число типа long на 1 = " 
-                + ++valueLong + "" + '\n' + "Уменьшили максимальное число типа long на 1 = " + --valueLong + '\n');
+                + ++maxByte + "" + '\n' + "Уменьшили максимальное число типа byte на 1 = " 
+                + --maxByte + "" + '\n' + "Максимальное число типа short = " + maxShort + "" + '\n' 
+                + "Увеличили максимальное число типа short на 1 = " + ++maxShort + "" + '\n' 
+                + "Уменьшили максимальное число типа short на 1 = " + --maxShort + "" + '\n'
+                + "Максимальное число типа int = " + maxInt + "" + '\n' + "Увеличили максимальное число типа int на 1 = " 
+                + ++maxInt + '\n' + "" +"Уменьшили максимальное число типа int на 1 = " + --maxInt + '\n' + ""
+                + "Максимальное число типа long = " + maxLong + "" + '\n' + "Увеличили максимальное число типа long на 1 = " 
+                + ++maxLong + "" + '\n' + "Уменьшили максимальное число типа long на 1 = " + --maxLong + '\n');
 
         System.out.println("5. Перестановка значений переменных");
 
-        int firstVariable = 2;
-        int secondVariable = 5;
+        int num1 = 2;
+        int num2 = 5;
         System.out.println("- с помощью третьей переменной");
-        int thirdVariable = firstVariable;
-        firstVariable = secondVariable;
-        secondVariable = thirdVariable; 
-        System.out.println(firstVariable + "" + '\n' + secondVariable + '\n');
+        int tmp = num1;
+        num1 = num2;
+        num2 = tmp; 
+        System.out.println(num1 + "" + '\n' + num2 + '\n');
 
         System.out.println("- с помощью арифметических операций");
-        firstVariable = firstVariable + secondVariable; // 5 + 2 = 7
-        secondVariable = firstVariable - secondVariable; // 7 - 2 = 5
-        firstVariable = firstVariable - secondVariable; // 7 - 5 = 2
-        System.out.println(firstVariable + "" + '\n' + secondVariable + '\n');
+        num1 += num2; // 5 + 2 = 7
+        num2 = num1 - num2; // 7 - 2 = 5
+        num1 -= num2; // 7 - 5 = 2
+        System.out.println(num1 + "" + '\n' + num2 + '\n');
 
         System.out.println("- с помощью арифметических операций");
-        firstVariable = firstVariable ^ secondVariable;
-        secondVariable = firstVariable ^ secondVariable;
-        firstVariable = firstVariable ^ secondVariable;
-        System.out.println(firstVariable + "" + '\n' + secondVariable + '\n');
+        num1 = num1 ^ num2;
+        num2 = num1 ^ num2;
+        num1 = num1 ^ num2;
+        System.out.println(num1 + "" + '\n' + num2 + '\n');
 
         System.out.println("6. Вывод символов и их кодов");
 
-        System.out.println("Символ кода 35 = " + (char) 35 + '\n' + "Символ кода 38 = " + (char) 38 + '\n' 
-                + "Символ кода 64 = " + (char) 64 + '\n' + "Символ кода 94 = " + (char) 94 + '\n' 
-                + "Символ кода 95 = " + (char) 95 + '\n');
+        char symbol35 = 35;
+        char symbol38 = 38;
+        char symbol64 = 64;
+        char symbol94 = 94;
+        char symbol95 = 95;
+        System.out.println("Символ кода 35 = " + symbol35 + '\n' + "Символ кода 38 = " + symbol38 + '\n' 
+                + "Символ кода 64 = " + symbol64 + '\n' + "Символ кода 94 = " + symbol94 + '\n' 
+                + "Символ кода 95 = " + symbol95 + '\n');
 
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
 
-        char symbol1 = '/';
-        char symbol2 = '\\';
-        char symbol3 = '_';
-        char symbol4 = '(';
-        char symbol5 = ')';
-        System.out.println("    " + symbol1 + symbol2);
-        System.out.println("   " + symbol1 + "  " + symbol2);
-        System.out.println("  " + symbol1 + symbol3 + symbol4 + " " + symbol5 + symbol2);
-        System.out.println(" " + symbol1 + "      " + symbol2);
-        System.out.println(symbol1 + "" + symbol3 + symbol3 + symbol3 + symbol3 + symbol1 + 
-                symbol2 + symbol3 + symbol3 + symbol2 + '\n');
+        char slash = '/';
+        char doubleBackslash = '\\';
+        char underscore = '_';
+        char leftParenthesis = '(';
+        char rightParenthesis = ')';
+        System.out.println("    " + slash + doubleBackslash);
+        System.out.println("   " + slash + "  " + doubleBackslash);
+        System.out.println("  " + slash + underscore + leftParenthesis + " " + rightParenthesis + doubleBackslash);
+        System.out.println(" " + slash + "      " + doubleBackslash);
+        System.out.println(slash + "" + underscore + underscore + underscore + underscore + slash + 
+                doubleBackslash + underscore + underscore + doubleBackslash + '\n');
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
 
-        int value123 = 123;
-        int hundredValue = value123/ 100;
-        int tenValue = value123 % 100 / 10;
-        int unitValue = value123 % 10;
-        int sumDigits = hundredValue + tenValue + unitValue;
-        int prodDigits = hundredValue * tenValue * unitValue;
-        System.out.println("Число 123 содержит:\n" + hundredValue + " сотен\n"
-                + tenValue + " десятков\n" + unitValue + " единиц\n" 
+        num1 = 123;
+        int hundreds = num1 / 100;
+        int tens = num1 % 100 / 10;
+        int ones = num1 % 10;
+        int sumDigits = hundreds + tens + ones;
+        int prodDigits = hundreds * tens * ones;
+        System.out.println("Число 123 содержит:\n" + hundreds + " сотен\n"
+                + tens + " десятков\n" + ones + " единиц\n" 
                 + "Сумма его цифр = " + sumDigits + '\n' 
                 + "Произведение = " + prodDigits + '\n');
 
