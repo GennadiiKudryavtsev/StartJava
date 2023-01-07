@@ -53,7 +53,7 @@ public class VariablesTheme {
                 + "\nМаксимальное число типа long = " + maxLong 
                 + "\nУвеличили максимальное число типа long на 1 = " 
                 + ++maxLong + "\nУменьшили максимальное число типа long на 1 = " + --maxLong 
-                + "\n");
+                + "\n"); 
 
         System.out.println("5. Перестановка значений переменных");
 
