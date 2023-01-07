@@ -65,7 +65,6 @@ public class VariablesTheme {
         num2 = tmp; 
         System.out.println(num1 + "\n" + num2);
 
-
         System.out.println("\n- с помощью арифметических операций");
         num1 += num2; // 5 + 2 = 7
         num2 = num1 - num2; // 7 - 2 = 5
