@@ -4,124 +4,92 @@ public class IfElseStatementTheme {
         System.out.println("1. Перевод псевдокода на язык Java\n");
         int age = 23;
         double height = 1.84;
-        String gender = "maleGender";
-        char theFirstLetterOfTheName;
+        String gender = "male";
 
         if (age > 20) {
-            System.out.println("Ты достаточно взрослый!\n");
+            System.out.println("Ты достаточно взрослый!");
         } else {
-            System.out.println("Ты младше 20!\n");
+            System.out.println("Ты младше 20!");
         }
 
-        if (gender != "maleGender") {
-            System.out.println("Ты девушка!\n");
+        if (gender != "male") {
+            System.out.println("Ты девушка!");
         } else {
-            System.out.println("Ты мужчина!\n");
+            System.out.println("Ты мужчина!");
         }
 
         if (height < 1.80) {
             System.out.println("Твой рост ниже 1.80 см!");
         } else {
-            System.out.println("Твой рост выше 1.80 см! Пойдем играть в волейбол\n");
+            System.out.println("Твой рост выше 1.80 см! Пойдем играть в волейбол");
         }
 
-
-        theFirstLetterOfTheName = "Kate".charAt(0);
-        if (theFirstLetterOfTheName == 'M') {
-            System.out.println("Ваше имя начинается на букву 'M'\n");
-        } else if (theFirstLetterOfTheName == 'I') {
-            System.out.println("Ваше имя начинается на букву 'I'\n");
+        char capitalLetter = "Kate".charAt(0);
+        if (capitalLetter == 'M') {
+            System.out.println("Ваше имя начинается на букву 'M'");
+        } else if (capitalLetter == 'I') {
+            System.out.println("Ваше имя начинается на букву 'I'");
         } else {
-            System.out.println("Добро пожаловать агент " + theFirstLetterOfTheName 
-                + "! Приятно познакомиться!\n");
+            System.out.println("Добро пожаловать агент " + capitalLetter 
+                + "! Приятно познакомиться!");
         }
 
-        System.out.println("2. Поиск max и min числа\n");
+        System.out.println("\n2. Поиск max и min числа\n");
         int num1 = 9;
         int num2 = 32;
         if (num1 > num2) {
-            System.out.println("Максимальным числом является " + num1 + "\n");
-            System.out.println("Минимальным числом является " + num2 + "\n");
+            System.out.println("Максимальным числом является " + num1);
+            System.out.println("Минимальным числом является " + num2);
         } else if (num1 < num2) {
-            System.out.println("Максимальным числом является " + num2 + "\n");
-            System.out.println("Минимальным числом является " + num1 + "\n");
+            System.out.println("Максимальным числом является " + num2);
+            System.out.println("Минимальным числом является " + num1);
         } else {
-            System.out.println("Числа равны\n");
+            System.out.println("Числа равны");
         }
 
-        System.out.println("3. Проверка числа\n");
-        int num = 0;
+        System.out.println("\n3. Проверка числа\n");
+        int num = 3;
 
         if (num == 0) {
-            System.out.println("Число " + num + " является нулем\n");
+            System.out.println("Число " + num + " является нулем");
         } else if (num % 2 == 0) {
-            if (num > 0) {
-                System.out.println("Число является четным\nЧисло является положительным\n");
-            } else {
-                System.out.println("Число является четным\nЧисло является отрицательным\n");
-            }
+            System.out.println("Число " + num + " является четным");
         } else {
-            if (num > 0) {
-                System.out.println("Число является нечетным\nЧисло является положительным\n");
-            } else {
-                System.out.println("Число является нечетным\nЧисло является отрицательным\n");
-            }
+            System.out.println("Число " + num + " является нечетным");
+        }
+        if (num > 0) {
+            System.out.println("Число " + num + " является положительным");
+        } else {
+            System.out.println("Число " + num + " является отрицательным");
         }
 
-        System.out.println("4. Поиск одинаковых цифр в числах\n");
+        System.out.println("\n4. Поиск одинаковых цифр в числах\n");
 
         num1 = 333;
         num2 = 123;
-        int num3 = num1 / 100;
-        int num4 = num1 % 100 / 10;
-        int num5 = num1 % 100 % 10;
+        int hundreds1 = num1 / 100;
+        int tens1 = num1 % 100 / 10;
+        int ones1 = num1 % 100 % 10;
+        int hundreds2 = num2 / 100;
+        int tens2 = num2 % 100 / 10;
+        int ones2 = num2 % 100 % 10;
 
-        int num6 = num2 / 100;
-        int num7 = num2 % 100 / 10;
-        int num8 = num2 % 100 % 10;
-
-        if (num3 == num6 && num4 == num7 && num5 == num8) {
-            if (num3 == num4 && num3 == num5) {
-                System.out.println("В числах " + num1 + " и " + num2 + " одинаковая цифра " + num3
-                    + ", номера разрядов 1, 2, 3\n"); 
-            } else if (num3 == num4) {
-                System.out.println("В числах " + num1 + " и " + num2 + " одинаковые цифры " + num3
-                    + ", " + num5 + ", номера разрядов 1, 2, 3\n"); 
-            } else if (num3 == num5) {
-                System.out.println("В числах " + num1 + " и " + num2 + " одинаковые цифры " + num3
-                    + ", " + num4 + ", номера разрядов 1, 2, 3\n"); 
-            } else {
-                System.out.println("В числах " + num1 + " и " + num2 + " одинаковые цифры " + num3
-                    + "," + num4 + "," + num5 + ", номера разрядов 1, 2, 3\n");
-            }
-        } else if (num3 == num6 && num5 == num8) {
-                if (num3 == num5) {
-                    System.out.println("В числах " + num1 + " и " + num2 + " одинаковая цифра "
-                        + num3 + ", номера разрядов 1, 3\n");
-                }
-        } else if (num4 == num7 && num5 == num8) {
-                if (num4 == num5) {
-                   System.out.println("В числах " + num1 + " и " + num2 + " одинаковые цифры " 
-                        + num4 + "," + num5 + ", номера разрядов 2, 3\n");
-                } else {
-                    System.out.println("В числах " + num1 + " и " + num2 + " одинаковая цифра "
-                        + num3 + "," + num4 + ", номер разряда 1, 2\n");
-                }
-        } else if (num3 == num6) {
-            System.out.println("В числах " + num1 + " и " + num2 + " одинаковая цифра " + num3
-                + ", номер разряда 1\n");
-        } else if (num4 == num7) {
-            System.out.println("В числах " + num1 + " и " + num2 + " одинаковая цифра " + num4
-                + ", номер разряда 2\n");
-        } else if (num5 == num8) {
-            System.out.println("В числах " + num1 + " и " + num2 + " одинаковая цифра " + num5
-                + ", номер разряда 3\n");
+        if (hundreds1 != hundreds2 && tens1 != tens2 && ones1 != ones2) {
+            System.out.println("Между числами " + num1 + " и " + num2 + " отсутствуют одинаковые цифры:");
         } else {
-            System.out.println("В числах " + num1 + " и " + num2 
-                + " отсутствуют одинаковые цифры\n");
+            System.out.println("Между числами " + num1 + " и " + num2 + " одинаковые цифры:");
+            if (hundreds1 == hundreds2) {
+                System.out.println("- в первом разряде " + hundreds1);
+            } 
+            if (tens1 == tens2) {
+                System.out.println("- во втором разряде " + tens1);
+            }
+            if (ones1 == ones2) {
+                System.out.println("- в третьем разряде " + ones1);
+            } 
         }
 
-        System.out.println("5. Определение символа по его коду\n");
+        System.out.println("\n5. Определение символа по его коду\n");
 
         char ch = '\u0054';
         if (ch >= 'A' && ch <= 'Z') {
@@ -134,28 +102,25 @@ public class IfElseStatementTheme {
             System.out.println(ch + " - не буква и не число");
         }
 
-        System.out.println("6. Подсчет суммы вклада и начисленных банком %\n");
+        System.out.println("\n6. Подсчет суммы вклада и начисленных банком %\n");
 
         int depositSum = 300000;
-        int percentSum;
-        int totalDepositAmount;
+        int percent = 5;
 
-        if (depositSum < 100000) {
-            percentSum  = depositSum * 5 / 100;
-        } else if (depositSum >= 100000 && depositSum <= 300000) {
-            percentSum  = depositSum * 7 / 100;
-        } else {
-            percentSum  = depositSum * 10 / 100;
+        if (depositSum >= 100000 && depositSum <= 300000) {
+            percent = 7;
+        } else if (depositSum > 300000) {
+            percent = 10;
         }
-        totalDepositAmount = depositSum + percentSum;
+        int totalDepositAmount = depositSum + depositSum * percent / 100;
         System.out.println("Сумма вклада = " + depositSum + "\n" + "Начисленный % = " 
-            + percentSum + "\n" + "Итоговая сумма с % = " + totalDepositAmount + "\n");
+            + percent + "\n" + "Итоговая сумма с % = " + totalDepositAmount);
 
-        System.out.println("7. Определение оценки по предметам\n");
+        System.out.println("\n7. Определение оценки по предметам\n");
 
         int history = 59;
         int programming = 91;
-        int averagePercentage = (history + programming) /2;
+        int averagePercentage = (history + programming) / 2;
         if (history <= 60 && history >= 0) {
             System.out.println("История - 2");
         } else if (history > 60 && history <= 73) {
