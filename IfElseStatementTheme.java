@@ -52,30 +52,32 @@ public class IfElseStatementTheme {
 
         if (num == 0) {
             System.out.println("Число " + num + " является нулем");
-        } else if (num % 2 == 0) {
-            System.out.println("Число " + num + " является четным");
         } else {
-            System.out.println("Число " + num + " является нечетным");
-        }
-        if (num > 0) {
-            System.out.println("Число " + num + " является положительным");
-        } else {
-            System.out.println("Число " + num + " является отрицательным");
-        }
+            if (num % 2 == 0) {
+                System.out.println("Число " + num + " четное");
+            } else {
+                System.out.println("Число " + num + " нечетное");
+            }
+            if (num > 0) {
+                System.out.println("Число " + num + " положительное");
+            } else {
+                System.out.println("Число " + num + " отрицательное");
+            }
+        }   
 
         System.out.println("\n4. Поиск одинаковых цифр в числах\n");
-
-        num1 = 333;
+        num1 = 341;
         num2 = 123;
         int hundreds1 = num1 / 100;
-        int tens1 = num1 % 100 / 10;
-        int ones1 = num1 % 100 % 10;
+        int tens1 = num1 / 10 % 10;
+        int ones1 = num1 % 10;
         int hundreds2 = num2 / 100;
-        int tens2 = num2 % 100 / 10;
-        int ones2 = num2 % 100 % 10;
+        int tens2 = num2 / 10 % 10;
+        int ones2 = num2 % 10;
 
         if (hundreds1 != hundreds2 && tens1 != tens2 && ones1 != ones2) {
-            System.out.println("Между числами " + num1 + " и " + num2 + " отсутствуют одинаковые цифры:");
+            System.out.println("Между числами " + num1 + " и " + num2 
+                + " отсутствуют одинаковые цифры:");
         } else {
             System.out.println("Между числами " + num1 + " и " + num2 + " одинаковые цифры:");
             if (hundreds1 == hundreds2) {
@@ -90,7 +92,6 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n5. Определение символа по его коду\n");
-
         char ch = '\u0054';
         if (ch >= 'A' && ch <= 'Z') {
             System.out.println(ch + " - это большая буква");
@@ -103,7 +104,6 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %\n");
-
         int depositSum = 300000;
         int percent = 5;
 
@@ -114,45 +114,45 @@ public class IfElseStatementTheme {
         }
         int totalDepositAmount = depositSum + depositSum * percent / 100;
         System.out.println("Сумма вклада = " + depositSum + "\n" + "Начисленный % = " 
-            + percent + "\n" + "Итоговая сумма с % = " + totalDepositAmount);
+                + percent + "\n" + "Итоговая сумма с % = " + totalDepositAmount);
 
         System.out.println("\n7. Определение оценки по предметам\n");
-
-        int history = 59;
-        int programming = 91;
-        int averagePercentage = (history + programming) / 2;
-        if (history <= 60 && history >= 0) {
-            System.out.println("История - 2");
-        } else if (history > 60 && history <= 73) {
-            System.out.println("История - 3");
-        } else if (history > 73 && history <= 91) {
-            System.out.println("История - 4");
+        int subjectOfHistory = 59;
+        int subjectOfprogramming = 91;
+        int estimationOfSubjectPrograming;
+        int estimationOfSubjectHistory;
+        if (subjectOfHistory <= 60 && subjectOfHistory >= 0) {
+            estimationOfSubjectHistory = 2;
+            System.out.println("История - " + estimationOfSubjectHistory);
+        } else if (subjectOfHistory > 60 && subjectOfHistory <= 73) {
+            estimationOfSubjectHistory = 3;
+            System.out.println("История - " + estimationOfSubjectHistory);
+        } else if (subjectOfHistory > 73 && subjectOfHistory <= 91) {
+            estimationOfSubjectHistory = 4;
+            System.out.println("История - " + estimationOfSubjectHistory);
         } else {
-            System.out.println("История - 5");
+            estimationOfSubjectHistory = 5;
+            System.out.println("История - " + estimationOfSubjectHistory);
         }
-
-        if (programming <= 60 && programming >= 0) {
-            System.out.println("Программирование - 2");
-        } else if (programming > 60 && programming <= 73) {
-            System.out.println("Программирование - 3");
-        } else if (programming > 73 && programming <= 91) {
-            System.out.println("Программирование - 4");
+        if (subjectOfprogramming <= 60 && subjectOfprogramming >= 0) {
+            estimationOfSubjectPrograming = 2;
+            System.out.println("Программирование - " + estimationOfSubjectPrograming);
+        } else if (subjectOfprogramming > 60 && subjectOfprogramming <= 73) {
+            estimationOfSubjectPrograming = 3;
+            System.out.println("Программирование - " + estimationOfSubjectPrograming);
+        } else if (subjectOfprogramming > 73 && subjectOfprogramming <= 91) {
+            estimationOfSubjectPrograming = 4;
+            System.out.println("Программирование - " + estimationOfSubjectPrograming);
         } else {
-            System.out.println("Программирование - 5");
+            estimationOfSubjectPrograming = 5;
+            System.out.println("Программирование - " + estimationOfSubjectPrograming);
         }
+        int averagePercentage = (subjectOfHistory + subjectOfprogramming) / 2;
         System.out.println("Средний % по предметам - " + averagePercentage + " %");
-        if (averagePercentage <= 60 && averagePercentage >= 0) {
-            System.out.println("Средний балл оценок по предметам - 2");
-        } else if (averagePercentage > 60 && averagePercentage <= 73) {
-            System.out.println("Средний балл оценок по предметам - 3");
-        } else if (averagePercentage > 73 && averagePercentage <= 91) {
-            System.out.println("Средний балл оценок по предметам - 4");
-        } else {
-            System.out.println("Средний балл оценок по предметам - 5");
-        }
+        int averageScore = (estimationOfSubjectPrograming + estimationOfSubjectHistory) / 2;
+        System.out.println("Средний балл оценок по предметам = " + averageScore);
 
         System.out.println("\n8. Расчет прибыли за год\n");
-
         int income = 13000;
         int rent = 5000;
         int expenses = 9000;
@@ -166,31 +166,30 @@ public class IfElseStatementTheme {
         System.out.println("\n9. Подсчет количества банкнот\n");
 
         int requestedSum = 567; 
-        int countHungredesInBank = 10;
-        int countTensInBank = 5;
-        int countOnesInBank = 50;
-        int countHungredesWhichRequested = requestedSum / 100;
-        int countTensWhichRequested = (requestedSum - countHungredesWhichRequested * 100) / 10;
-        int countOnesWhichRequested = requestedSum % 10;
-        int sumInBank = countHungredesInBank * 100 + countTensInBank * 10 + countOnesInBank;
+        int hungredesInBank = 10;
+        int tensInBank = 5;
+        int onesInBank = 50;
+        int hungredesWhichRequested = requestedSum / 100;
+        int tensWhichRequested = (requestedSum - hungredesWhichRequested) / 10 % 10;
+        int onesWhichRequested = requestedSum % 10;
+        int sumInBank = hungredesInBank * 100 + tensInBank * 10 + onesInBank;
         int countHungredes = 0;
         int countTens = 0;
         int countOnes = 0;
-
         if (sumInBank < requestedSum) {
             System.out.println("В банкомате не хватает банкнот!");
         } else {
-            if (countHungredesInBank < countHungredesWhichRequested) {
-                countHungredes = countHungredesInBank;
-                countTensWhichRequested += 
-                    (countHungredesWhichRequested - countHungredesInBank) * 100 / 10;
+            if (hungredesInBank < hungredesWhichRequested) {
+                countHungredes = hungredesInBank;
+                tensWhichRequested += 
+                    (hungredesWhichRequested - hungredesInBank) * 100 / 10;
             } else {
-                countHungredes = countHungredesWhichRequested;
+                countHungredes = hungredesWhichRequested;
             }
-            if (countTensInBank > countTensWhichRequested) {
-                countTens = countTensWhichRequested;
-                if (countOnesInBank > countOnesWhichRequested) {
-                    countOnes = countOnesWhichRequested;
+            if (tensInBank > tensWhichRequested) {
+                countTens = tensWhichRequested;
+                if (onesInBank > onesWhichRequested) {
+                    countOnes = onesWhichRequested;
                     int sum = countHungredes * 100 + countTens * 10 + countOnes;
                     if (sum == requestedSum) {
                         System.out.println("Банкомат выдает: \n" + countHungredes + " - сотен\n" 
@@ -203,10 +202,10 @@ public class IfElseStatementTheme {
                     System.out.println("В банкомате не хватает банкнот!");
                 }
             } else {
-                countOnesWhichRequested += (countTensWhichRequested - countTensInBank) * 10;
-                countTens = countTensInBank;
-                if (countOnesInBank > countOnesWhichRequested) {
-                    countOnes = countOnesWhichRequested;
+                onesWhichRequested += (tensWhichRequested - tensInBank) * 10;
+                countTens = tensInBank;
+                if (onesInBank > onesWhichRequested) {
+                    countOnes = onesWhichRequested;
                     int sum = countHungredes * 100 + countTens * 10 + countOnes;
                     if (sum == requestedSum) {
                         System.out.println("Банкомат выдает: \n" + countHungredes + " - сотен\n" 
