@@ -2,19 +2,20 @@ public class CyclesTheme {
 
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел\n");
-        int num = -10;
-        int evenNumbers = 0;
-        int oddNumbers = 0;
+        int counter = -10;
+        int evenNumbersSum = 0;
+        int oddNumbersSum = 0;
         do {
-            if (num % 2== 0) {
-                evenNumbers += num;
+            if (counter % 2== 0) {
+                evenNumbersSum += counter;
             } else {
-                oddNumbers += num;
+                oddNumbersSum += counter;
             }
-            num++;
-        } while(num <= 21);
-        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + evenNumbers 
-            + ", а нечетных = " + oddNumbers);
+            counter++;
+        } while(counter <= 21);
+        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + evenNumbersSum 
+                + ", а нечетных = " + oddNumbersSum);
+        System.out.println();
 
         System.out.println("2. Вывод чисел в интервале (min и max) в порядке убывания\n");
         int num1 = 10;
@@ -35,12 +36,12 @@ public class CyclesTheme {
         System.out.println(max + ", " + average + ", " + min);
          
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр\n");
-        num = 1234;
+        int digit = 1234;
         int sum = 0;
         System.out.print("Исходное число: ");
-        while (num != 0) {
-            num2 = num % 10;
-            num /= 10;
+        while (digit != 0) {
+            num2 = digit % 10;
+            digit /= 10;
             sum += num2;
             System.out.print(num2);
         }
@@ -48,36 +49,34 @@ public class CyclesTheme {
      
         System.out.println("\n4. Вывод чисел на консоль в несколько строк\n");
         int count = 0;
-        for (int i = 1; i < 30; i += 2) {
+        for (int i = 1; i < 31; i += 2) {
             if (i < 24) {
                 System.out.printf("%5d", i);
             } else {
                 System.out.printf("%5d", 0);
             }   
-            count += 1;
+            count++;
             if (count % 5 == 0) {
-                System.out.println(" ");
+                System.out.println();
              }
         } 
 
         System.out.println("\n5. Проверка количества двоек на четность/нечетность\n");
-        num = 3242592;
-        num2 = num;
-        int countTwo = 0;
-        int countTwoSum = 0;
-        int result;
-        while (num2 != 0) {
-            result = num2 % 10;
-            num2 = num2 / 10;
-            if (result == 2) {
-                countTwo += 1;
+        int num = 3242592;
+        int copyNum = num;
+        int countTwos = 0;
+        while (copyNum != 0) {
+            digit = copyNum % 10;
+            copyNum /= 10;
+            if (digit == 2) {
+                countTwos++;
             }
         } 
-        if (countTwo % 2 == 0) {
-            System.out.println("Число " + num + " содержит " + countTwo 
+        if (countTwos % 2 == 0) {
+            System.out.println("Значение " + num + " имеет " + countTwos 
                 + " (четное) количество двоек");
         } else {
-            System.out.println("Число " + num + " содержит " + countTwo 
+            System.out.println("Число " + num + " содержит " + countTwos 
                 + " (нечетное) количество двоек");
         }
 
@@ -88,7 +87,7 @@ public class CyclesTheme {
                 System.out.print("\n");
             } 
         }
-        System.out.println(" "); // прямоугольный треугольник
+        System.out.println(); // прямоугольный треугольник
         int n = 5;
         int i = n;
         while (i >= 1) {
@@ -97,10 +96,10 @@ public class CyclesTheme {
                 System.out.print("#");
                 j++;
             }
-            System.out.println("");
+            System.out.println();
             i--;
         }
-        System.out.println("");
+        System.out.println();
         int counter1 = 1; // треугольник
         int counter2 = 0;
         int counter3 = 0;
@@ -117,7 +116,7 @@ public class CyclesTheme {
                 counter1--;
             }
             counter2++;
-            System.out.println("");
+            System.out.println();
         } while (counter2 < 5);
 
         System.out.println("\n7. Отображение ASCII-символов\n");
@@ -125,14 +124,14 @@ public class CyclesTheme {
         for (i = 33; i <= 47; i++) {
             if (i % 2 != 0) {
                 System.out.printf("%5c", (char) i);
-                System.out.println("");
+                System.out.println();
             } 
         }
         System.out.println("\n" + "Char");
         for (i = 97; i <= 122; i++) {
             if (i % 2 == 0) {
                 System.out.printf("%5c", (char) i);
-                System.out.println("");
+                System.out.println();
             }
         }
 
@@ -167,7 +166,6 @@ public class CyclesTheme {
             } else {
                 sum2 += num2 % 10;
             }
-            System.out.println("");
             num2 /= 10;
             column++;
         }
