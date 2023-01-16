@@ -49,7 +49,7 @@ public class CyclesTheme {
      
         System.out.println("\n4. Вывод чисел на консоль в несколько строк\n");
         int count = 0;
-        for (int i = 1; i < 31; i += 2) {
+        for (int i = 1; i < 24; i += 2) {
             if (i < 24) {
                 System.out.printf("%5d", i);
             } else {
@@ -58,8 +58,19 @@ public class CyclesTheme {
             count++;
             if (count % 5 == 0) {
                 System.out.println();
+            }
+        }
+        for (int i = 1; i < 31; i += 2) {
+            if (i < 31) {
+                System.out.printf("%5d", i);
+            } else {
+                System.out.printf("%5d", 0);
+            }   
+            count++;
+            if (count % 5 == 0) {
+                System.out.println();
              }
-        } 
+        }
 
         System.out.println("\n5. Проверка количества двоек на четность/нечетность\n");
         int num = 3242592;
@@ -143,7 +154,7 @@ public class CyclesTheme {
         while (num != 0) {
             rev = num % 10;
             i = i * 10 + rev;
-            num = num / 10;
+            num /= 10;
         }
         if (originalNum == i) {
             System.out.println("Число " + num + " является палиндромом");
