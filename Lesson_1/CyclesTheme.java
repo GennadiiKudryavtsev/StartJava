@@ -3,53 +3,50 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел\n");
         int counter = -10;
-        int evenNumbersSum = 0;
-        int oddNumbersSum = 0;
+        int evensSumNumber = 0;
+        int sumОddNumbers = 0;
         do {
             if (counter % 2== 0) {
-                evenNumbersSum += counter;
+                evensSumNumber += counter;
             } else {
-                oddNumbersSum += counter;
+                sumОddNumbers += counter;
             }
             counter++;
         } while(counter <= 21);
-        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + evenNumbersSum 
-                + ", а нечетных = " + oddNumbersSum);
+        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + evensSumNumber 
+                + ", а нечетных = " + sumОddNumbers);
         System.out.println();
 
-        System.out.println("2. Вывод чисел в интервале (min и max) в порядке убывания\n");
-        int num1 = 10;
+        System.out.println("2. Вывод чисел в интервале (min и max) в порядке убывания\n");     
+        int max = 10;
         int num2 = 5;
-        int num3 = -1;
-        int max = 0;
-        int average = 0;
-        int min = 0;
-        for (int i = -1; i <= 10; i++) {
-            if (i == num3) {
-                min = i;
-            } else if (i == num2) {
-                average = i;
-            } else if (i == num1) {
-                max = i;
-            }
+        int min = -1;
+        for(int i = max; i > min; i--) {
+            if(i > 5 && i < 10) {
+                int num5 = --max;
+                System.out.print(num5);
+           } else if (i > -1 && i < 5) {
+               int num4 = --num2;;
+               System.out.print(num4);
+            } 
         }
-        System.out.println(max + ", " + average + ", " + min);
-         
+        System.out.println();
+
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр\n");
-        int digit = 1234;
+        num2 = 1234;
         int sum = 0;
         System.out.print("Исходное число: ");
-        while (digit != 0) {
-            num2 = digit % 10;
-            digit /= 10;
-            sum += num2;
-            System.out.print(num2);
+        while (num2 > 0) {
+            int digit = num2 % 10;
+            num2 /= 10;
+            sum += digit;
+            System.out.print(digit);
         }
         System.out.println("\nСумма цифр: " + sum);
      
         System.out.println("\n4. Вывод чисел на консоль в несколько строк\n");
         int count = 0;
-        for (int i = 1; i < 24; i += 2) {
+        for (int i = 1; i < 30; i += 2) {
             if (i < 24) {
                 System.out.printf("%5d", i);
             } else {
@@ -60,6 +57,7 @@ public class CyclesTheme {
                 System.out.println();
             }
         }
+        System.out.println();
         for (int i = 1; i < 31; i += 2) {
             if (i < 31) {
                 System.out.printf("%5d", i);
@@ -77,7 +75,7 @@ public class CyclesTheme {
         int copyNum = num;
         int countTwos = 0;
         while (copyNum != 0) {
-            digit = copyNum % 10;
+            int digit = copyNum % 10;
             copyNum /= 10;
             if (digit == 2) {
                 countTwos++;
@@ -85,7 +83,7 @@ public class CyclesTheme {
         } 
         if (countTwos % 2 == 0) {
             System.out.println("Значение " + num + " имеет " + countTwos 
-                + " (четное) количество двоек");
+                + " количество двоек. Данное значение является четным.");
         } else {
             System.out.println("Число " + num + " содержит " + countTwos 
                 + " (нечетное) количество двоек");
@@ -168,7 +166,7 @@ public class CyclesTheme {
         int column = 1;
         int sum1 = 0;
         int sum2 = 0;
-        num3 = num % 1000;
+        int num3 = num % 1000;
         int num4 = num / 1000;
 
         while (num2 != 0) {
