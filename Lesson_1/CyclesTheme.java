@@ -3,62 +3,46 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел\n");
         int counter = -10;
-        int sumEvensNumbers = 0;
+        int sumEvenNumbers = 0;
         int sumОddNumbers = 0;
         do {
             if (counter % 2== 0) {
-                sumEvensNumbers += counter;
+                sumEvenNumbers += counter;
             } else {
                 sumОddNumbers += counter;
             }
             counter++;
         } while(counter <= 21);
-        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEvensNumbers
+        System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEvenNumbers
                 + ", а нечетных = " + sumОddNumbers);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания\n");
-        int num1 = 4;
+        int num1 = 10;
         int num2 = 5;
-        int num3 = 12;
-        int max;
-        int min;
-        int averageNumber;
-        if (num1 > num2 && num2 > num3) {
-            max = num1;
-            averageNumber = num2;
-            min = num3;
-        } else if (num1 > num3 && num3 > num2) {
-            max = num1;
-            averageNumber = num3;
-            min = num2;
-        } else if (num2 > num1 && num1 > num3) {
-            max = num2;
-            averageNumber = num1;
-            min = num3;
-        } else if (num2 > num3 && num3 > num1) {
-            max = num2;
-            averageNumber = num3;
-            min = num1;
-        } else if (num3 > num1 && num1 > num2) {
-            max = num3;
-            averageNumber = num1;
-            min = num2;
-        } else {
-            max = num3;
-            averageNumber = num2;
-            min = num1;
+        int num3 = -1;
+        if (num2 > num3) {
+            int num4 = num2;
+            num2 = num3;
+            num3 = num4;
         }
-        System.out.println("Число " + max + " является " + min + "\n");
-        int intervalNum;
-        for(int i = max; i > min; i--) {
-            if(i > averageNumber && i < max) {
-                intervalNum = --max;
-                System.out.print(intervalNum);
-           } else if (i > min && i < averageNumber) {
-               intervalNum = --num2;;
-               System.out.print(intervalNum);
-            } 
+        if (num1 > num3) {
+            int num4 = num1;
+            num1 = num3;
+            num3 = num4;
         }
+        if (num1 > num2) {
+            int num4 = num1;
+            num1 = num2;
+            num2 = num4;
+        }
+        int max = num3;
+        int average = num2;
+        int min = num1;
+        System.out.println("Максимальное число = " + max + ". Минимальное число = " + min);
+        for (int i = max - 1; i > min; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
 
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр\n");
         num2 = 1234;
@@ -73,23 +57,21 @@ public class CyclesTheme {
         System.out.println("\nСумма цифр: " + sum);
      
         System.out.println("\n4. Вывод чисел на консоль в несколько строк\n");
-        int count5 = 0;   // счетчик итераций на 5. Должен проходить 5 раз и обнуляться
-        int countI = 0;   // счетчик итераций i
-        int maxNum = 24;  // проверка на 31 прошла успешно, также проверял другие значения
-        for (int i = 1; i < maxNum; i += 2) {
-            countI = i;
-            if (i < maxNum) {
+        counter = 0;
+        max = 24;
+        for (int i = 1; i < max; i += 2) {
+            if (i < max) {
                 System.out.printf("%5d", i);
             }
-            count5++;
-            if (count5 % 5 == 0) {
-                System.out.println("\n"); // добавил /n  чтоб смотрелось красиво
-                count5 = 0;
+            counter++;
+            if (counter % 5 == 0) {
+                System.out.println();
+                counter = 0;
             }
         }
-        if (count5 != 0) {
-            int result = 5 - count5;
-            for ( int j = 1; j <= result; j++) {
+        if (counter != 0) {
+            int result = 5 - counter;
+            for (int j = 1; j <= result; j++) {
                 System.out.printf("%5d", 0);
             }
             System.out.println();
@@ -113,43 +95,43 @@ public class CyclesTheme {
         System.out.printf("Число " + num + " содержит " + countTwos + type + "количество двоек\n");
 
         System.out.println("\n6. Отображение фигур в консоли\n");
-        for (int i = 1; i <= 50; i++) { // квадрат
+        for (int i = 1; i <= 50; i++) {
             System.out.print("*");
             if (i % 10 == 0) {
                 System.out.println();
-            } 
-        }
-
-        System.out.println(); // прямоугольный треугольник
-        num = 5;
-        while (num >= 1) {
-            int count1 = 1;
-            while (count1 <= num) {
-                System.out.print("#");
-                count1++;
             }
-            System.out.println();
-            num--;
         }
 
         System.out.println();
-        int counter1 = 1; // треугольник
-        int counter2 = 0;
-        int counter3 = 0;
+        int maxСolumn = 5;
+        while (maxСolumn >= 1) {
+            int line = 1;
+            while (line <= maxСolumn) {
+                System.out.print("#");
+                line++;
+            }
+            System.out.println();
+            maxСolumn--;
+        }
+
+        System.out.println();
+        int line = 1;
+        int maxLine = 1;
+        int column = 0;
         do {
-            counter3 = 0;
+            column = 0;
             do {
                 System.out.print("$");
-                counter3++;
-            } while (counter1 > counter3);
-            if (counter2 < 2) {
-                counter1++;
+                column++;
+            } while (line > column);
+            if (maxLine < 3) {
+                line++;
             } else {
-                counter1--;
+                line--;
             }
-            counter2++;
+            maxLine++;
             System.out.println();
-        } while (counter2 < 5);
+        } while (maxLine <= 5);
 
         System.out.println("\n7. Отображение ASCII-символов\n");
         System.out.printf("%6s%6s%n", "Dec", "Char");
@@ -184,7 +166,7 @@ public class CyclesTheme {
         System.out.println("\n9. Определение, является ли число счастливым\n");
         num = 123111;
         num2 = num;
-        int column = 1;
+        column = 1;
         int sum1 = 0;
         int sum2 = 0;
         num3 = num % 1000;
