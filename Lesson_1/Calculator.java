@@ -2,29 +2,25 @@ public class Calculator {
 
     public static void main(String[] args) {
         System.out.println("Калькулятор");
-        int num1 = 9;
-        int num2 = 5;
-        int degree = 3;
+        int num1 = 10;
+        int num2 = 90;
         char operation = '%';
-        int result = 1;
+        double result = 1;
         if (operation == '^') {
-            for (int i = 1; i <= degree; i++) {
-                result = result * num1;
+            for (int i = 1; i <= num2; i++) {
+                result *= num1;
             }
-            System.out.println("Число " + num1 + " возведенное в степень ^ " + degree 
-                + " = " + result);
         } else if (operation == '%') {
-            System.out.println("Процент от числа " + num1 + " = " + (double) num1 / 100);
+            result = num1 % num2;
         } else if (operation == '+') {
-            System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+            result = num1 + num2;
         } else if (operation == '-') {
-            System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+            result = num1 - num2;
         } else if (operation == '*') {
-            System.out.println(num1 + " x " + num2 + " = " + (num1 * num2));
+            result = num1 * num2;
         } else if (operation == '/') {
-            System.out.println(num1 + " / " + num2 + " = " + ((double) num1 / (double) num2));
-        } else {
-            System.err.println("Вы ввели некорректный оператор");
+            result = num1 / num2;
         }
+        System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
     }
 }
