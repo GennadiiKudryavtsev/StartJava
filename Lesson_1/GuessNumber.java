@@ -1,4 +1,4 @@
-public class GuessTheNumber {
+public class GuessNumber {
 
     public static void main(String[] args) {
         System.out.println("Игра “Угадай число”\n");
@@ -10,10 +10,12 @@ public class GuessTheNumber {
             if (inputNumber == computerNumber) {
                 System.out.println("Вы победили!");
                 break;
-            } else if (inputNumber < 1 || inputNumber > 100) {
+            } 
+            if (inputNumber < 1 || inputNumber > 100) {
                 System.out.println("Вы ввели число за рамками диапазона от 0 до 100");
                 break;
-            } else if (inputNumber > computerNumber) {
+            } 
+            if (inputNumber > computerNumber) {
                 System.out.println("Число " + inputNumber + " больше того, что загадал компьютер\n");
                 inputNumber--;
             } else {
