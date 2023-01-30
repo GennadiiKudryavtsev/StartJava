@@ -4,19 +4,23 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-
-        while(true) {
-            calculator.mathExpressionCalculator();
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+        Scanner scanner = new Scanner(System.in);
+        String answer = "yes";
+        while (!answer.equals("no")) {
+            System.out.println("Введите первое число: ");
+            calculator.setFirstNumber(scanner.nextInt());
+            System.out.println("Введите знак математической операции: ");
+            calculator.setOperation(scanner.next().charAt(0));
+            System.out.println("Введите второе число: ");
+            calculator.setSecondNumber(scanner.nextInt());
+            calculator.countingMathExpression();
             calculator.setUserResponse(scanner.nextLine());
-            while(!calculator.getUserResponse().equals("yes")) {
-                if (calculator.getUserResponse().equals("yes")) {
-                    calculator.mathExpressionCalculator();
-                } else if (calculator.getUserResponse().equals("no")) {
-                    System.exit(0);
+            while (!calculator.getUserResponse().equals("yes")) {
+                if (calculator.getUserResponse().equals("no")) {
+                    answer = calculator.getUserResponse();
+                    break;
                 } else {
-                    System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                    System.out.println("Хотите продолжить вычисления? [yes/no]: O_O 2");
                     calculator.setUserResponse(scanner.nextLine());
                 }
             }
