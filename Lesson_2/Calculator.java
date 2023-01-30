@@ -20,7 +20,7 @@ public class Calculator {
         return secondNumber;
     }
 
-    public void setNickname(int secondNumber) {
+    public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
     }
 
@@ -40,44 +40,29 @@ public class Calculator {
         this.userResponse = userResponse;
     }       
 
-    public  void mathExpressionCalculator() {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите первое число: ");
-        firstNumber = scanner.nextInt();
-        System.out.println("Введите знак математической операции: ");
-        operation = scanner.next().charAt(0);
-        System.out.println("Введите второе число: ");
-        secondNumber = scanner.nextInt();
-
-        switch(operation)
-        {
+    public void countingMathExpression() {
+        switch(operation) {
         case '+':
             result = firstNumber + secondNumber;
-            System.out.println("Результат: " + result);
             break;
         case '-':
             result = firstNumber - secondNumber;
-            System.out.println("Результат: " + result);
             break;
         case '*':
             result = firstNumber * secondNumber;
-            System.out.println("Результат: " + result);
             break;
         case '/':
             result = firstNumber / secondNumber;
-            System.out.println("Результат: " + result);
             break;
         case '^':
             for (int i = 0; i < secondNumber; i++) {
                 result *= firstNumber;
             }
-            System.out.println("Результат: " + result);
             break;
         case '%':
                 result = firstNumber % secondNumber;
-                System.out.println("Результат: " + result);
             break;
         }
+        System.out.println("Результат: " + result);
     }   
 }    
