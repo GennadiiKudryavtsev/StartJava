@@ -1,15 +1,14 @@
-package com.startjava.lesson_2_3.calculator;
+// package com.startjava.lesson_2_3.calculator;
 
 import java.util.Scanner;
 
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        String userResponse;
+        String userResponse = "yes";
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        String answer = "yes";
-        while (!answer.equals("no")) {
+        while (!userResponse.equals("no")) {
             System.out.println("Введите первое число: ");
             calculator.setFirstNumber(scanner.nextInt());
             System.out.println("Введите знак математической операции: ");
@@ -20,7 +19,6 @@ public class CalculatorTest {
             userResponse = scanner.nextLine();
             while (!userResponse.equals("yes")) {
                 if (userResponse.equals("no")) {
-                    answer = userResponse;
                     break;
                 }
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");

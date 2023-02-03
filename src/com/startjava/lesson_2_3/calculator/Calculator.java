@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+// package com.startjava.lesson_2_3.calculator;
 
 import java.util.Scanner;
 
@@ -9,24 +9,12 @@ public class Calculator {
     private char operation;
     private int result = 1;
 
-    public int getFirstNumber() {
-        return firstNumber;
-    }
-
     public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public int getSecondNumber() {
-        return secondNumber;
-    }
-
     public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
-    }
-
-    public char getOperation() {
-        return operation;
     }
 
     public void setOperation(char operation) {
