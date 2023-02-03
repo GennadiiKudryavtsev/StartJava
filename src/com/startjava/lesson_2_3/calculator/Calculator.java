@@ -1,4 +1,4 @@
-package Users.gennadykudryavtsev.Desktop.MyCode.StartJava.src.com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3.calculator;
 
 import java.util.Scanner;
 
@@ -8,7 +8,6 @@ public class Calculator {
     private int secondNumber;
     private char operation;
     private int result = 1;
-    private String userResponse;
 
     public int getFirstNumber() {
         return firstNumber;
@@ -34,36 +33,28 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public String getUserResponse() {
-        return userResponse;
-    }
-
-    public void setUserResponse(String userResponse) {
-        this.userResponse = userResponse;
-    }       
-
-    public void countingMathExpression() {
-        switch(operation) {
-        case '+':
-            result = firstNumber + secondNumber;
-            break;
-        case '-':
-            result = firstNumber - secondNumber;
-            break;
-        case '*':
-            result = firstNumber * secondNumber;
-            break;
-        case '/':
-            result = firstNumber / secondNumber;
-            break;
-        case '^':
-            for (int i = 0; i < secondNumber; i++) {
-                result *= firstNumber;
-            }
-            break;
-        case '%':
+    public void calculate() {
+        switch (operation) {
+            case '+':
+                result = firstNumber + secondNumber;
+                break;
+            case '-':
+                result = firstNumber - secondNumber;
+                break;
+            case '*':
+                result = firstNumber * secondNumber;
+                break;
+            case '/':
+                result = firstNumber / secondNumber;
+                break;
+            case '^':
+                for (int i = 0; i < secondNumber; i++) {
+                    result *= firstNumber;
+                }
+                break;
+            case '%':
                 result = firstNumber % secondNumber;
-            break;
+                break;
         }
         System.out.println("Результат: " + result);
     }   

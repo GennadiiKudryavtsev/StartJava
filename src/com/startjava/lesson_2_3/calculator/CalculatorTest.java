@@ -1,10 +1,11 @@
-package Users.gennadykudryavtsev.Desktop.MyCode.StartJava.src.com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3.calculator;
 
 import java.util.Scanner;
 
 public class CalculatorTest {
 
     public static void main(String[] args) {
+        String userResponse;
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
@@ -15,16 +16,15 @@ public class CalculatorTest {
             calculator.setOperation(scanner.next().charAt(0));
             System.out.println("Введите второе число: ");
             calculator.setSecondNumber(scanner.nextInt());
-            calculator.countingMathExpression();
-            calculator.setUserResponse(scanner.nextLine());
-            while (!calculator.getUserResponse().equals("yes")) {
-                if (calculator.getUserResponse().equals("no")) {
-                    answer = calculator.getUserResponse();
+            calculator.calculate();
+            userResponse = scanner.nextLine();
+            while (!userResponse.equals("yes")) {
+                if (userResponse.equals("no")) {
+                    answer = userResponse;
                     break;
-                } else {
-                    System.out.println("Хотите продолжить вычисления? [yes/no]: O_O 2");
-                    calculator.setUserResponse(scanner.nextLine());
                 }
+                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                userResponse = scanner.nextLine();
             }
         }
     }
