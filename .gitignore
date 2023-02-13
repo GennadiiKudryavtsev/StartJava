@@ -1,2 +1,6 @@
+out/
 *.class
 *.DS_Store
+/options
+/optionsj
+

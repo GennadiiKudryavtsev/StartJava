@@ -1,4 +1,4 @@
-package Users.gennadykudryavtsev.Desktop.MyCode.StartJava.src.com.startjava.lesson_1.final;
+package com.startjava.lesson_1.finish;
 
 public class GuessNumber {
 
