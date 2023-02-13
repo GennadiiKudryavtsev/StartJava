@@ -1,6 +1,7 @@
 out/
+.idea
 *.class
 *.DS_Store
 /options
 /optionsj
-
+.gitignore
