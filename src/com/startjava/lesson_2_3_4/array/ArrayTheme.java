@@ -7,39 +7,49 @@ public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
         int[] intArr = {3, 2, 5, 7, 1, 6, 4};
-        for (int arr : intArr) {
-            System.out.print(arr);
+        int length = intArr.length;
+        for (int outputArr : intArr) {
+            System.out.print(outputArr + " ");
         }
         System.out.println();
-        for (int i = intArr.length - 1; i >= 0; i --) {
-            System.out.print(intArr[i]);
+        for (int i = length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (intArr[j] < intArr[j + 1]) {
+                   int temp = intArr[j + 1];
+                    intArr[j + 1] = intArr[j];
+                    intArr[j] = temp;
+                }
+            }
+        }
+        for (int outputArr : intArr) {
+            System.out.print(outputArr + " ");
         }
 
         System.out.println("\n\n2. Вывод произведения элементов массива");
         intArr = new int[10];
-        for (int i = 0; i <= 9; i++) {
+        length = intArr.length;
+        for (int i = 0; i < length; i++) {
             intArr[i] = i;
         }
-        int sum = 1;
-        for (int i = 1; i < intArr.length - 1; i++) {
-            sum = sum * intArr[i];
+        int productNumbers = 1;
+        for (int i = 1; i < length - 1; i++) {
+            productNumbers *= intArr[i];
+            System.out.print(intArr[i] + ((i != length - 2) ? " * " : " = " + productNumbers));
         }
-        int sum2 = 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8;
-        String securitySum = sum == sum2 ? "1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " + sum : "Ошибка вычислений";
-        System.out.println(securitySum);
-        System.out.println("Под индексом 0, значение " + intArr[0] + "\nИндекс 9 равен " + intArr[9]);
+        System.out.println("\nПод индексом 0, значение " + intArr[0] + "\nИндекс 9 равен " + intArr[9]);
 
         System.out.println("\n3. Удаление элементов массива");
         double[] doubleArr = new double[15];
+        length = doubleArr.length;
         double average = 0;
         int count = 0;
         System.out.println("Исходный массив:");
-        for (int i = 0; i < doubleArr.length; i++) {
+        for (int i = 0; i < length; i++) {
             doubleArr[i] = Math.random();
-            average += i;
+            average += doubleArr[i];
         }
-        average = average / doubleArr.length;
-        for (int i = 0; i < 9; i++) {
+        average = average / length;
+        for (int i = 0; i < 8; i++) {
             System.out.printf("%7.3f", doubleArr[i]);
         }
         System.out.println("\nИзмененный массив:");
@@ -53,22 +63,28 @@ public class ArrayTheme {
         System.out.println("\nКоличество обнуленных ячеек: " + count);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
-        String[] stringArr = new String[] {"Z", "Y", "X", "W", "V", "U", "T", "S", "R", "Q", "P", "O", "N", "M", "L", "K",
-                "J", "I", "H", "G", "F", "E", "D", "C", "B", "A"};
-        int countIndex = 0;
-            for (int i = 0; i < stringArr.length; i++) {
-                countIndex++;
-                for (int j = 0; j < countIndex; j++) {
-                    System.out.print(stringArr[j]);
+        length = 26;
+        char[] alphabet = new char[length];
+        for (int i = 0; i < length; i++) {
+            alphabet[i] = (char) ('A' + i);
+        }
+        for (int i = 0; i < length; i++) {
+            for (int j = length - 1; j >= i; j--) {
+                if (j >= i) {
+                    System.out.print(alphabet[j]);
+                } else {
+                    break;
                 }
-                System.out.println();
             }
+            System.out.println();
+        }
 
         System.out.println("\n5. Генерация уникальных чисел");
         intArr = new int[30];
-        for (int i = 0; i < intArr.length; i++) {
+        length = intArr.length;
+        for (int i = 0; i < length; i++) {
             intArr[i] = 60 + (int) (Math.random() * 40);
-            for (int j = 0; j < intArr.length; j++) {
+            for (int j = 0; j < length; j++) {
                 if (i == j) {
                     continue;
                 }
@@ -78,16 +94,33 @@ public class ArrayTheme {
                 }
             }
         }
-        for (int arr : intArr) {
-            System.out.print(arr + " ");
+        for (int outputArr : intArr) {
+            System.out.print(outputArr + " ");
         }
 
         System.out.println("\n\n6. Сдвиг элементов массива");
-        stringArr = new String[] {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        String[] stringArrCopy = new String[stringArr.length - 4];
-        System.arraycopy(stringArr, 1, stringArrCopy, 0, 1);
-        System.arraycopy(stringArr, 3, stringArrCopy, 1, 3);
-        System.arraycopy(stringArr, 7, stringArrCopy, 4, 3);
+        String[] stringArr = new String[] {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        length = stringArr.length;
+        int countRemoveIndex = 0;
+        for (int i = 0; i < length; i++) {
+            if (stringArr[i].isBlank()) {
+                countRemoveIndex++;
+            }
+        }
+        String[] stringArrCopy = new String[length - countRemoveIndex];
+        int countSymbols = 0;
+        int stringArrIndex = 0;
+        int stringArrCopyIndex = 0;
+        for (int i = 0; i < length; i++) {
+            if (stringArr[i].isBlank()) {
+                System.arraycopy(stringArr, stringArrIndex, stringArrCopy, stringArrCopyIndex, countSymbols);
+                stringArrCopyIndex += countSymbols;
+                countSymbols = 0;
+                stringArrIndex = i + 1;
+            } else {
+                countSymbols++;
+            }
+        }
         System.out.println(Arrays.toString(stringArr));
         System.out.println(Arrays.toString(stringArrCopy));
     }
