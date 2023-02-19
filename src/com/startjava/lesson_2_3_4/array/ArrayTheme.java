@@ -54,14 +54,13 @@ public class ArrayTheme {
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
         length = 26;
         char[] alphabet = new char[length];
+
         for (int i = 0; i < length; i++) {
-            alphabet[i] = (char) ('Z' - i);
+            alphabet[i] = (char) ('A' + i);
         }
-        int countIndex = 0;
-        for (int j = alphabet.length; j > 0 ; j--) {
-            countIndex++;
-            for (int k = 0; k < countIndex; k++) {
-                System.out.print(alphabet[k]);
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(alphabet[length - 1 - j]);
             }
             System.out.println();
         }
@@ -70,44 +69,59 @@ public class ArrayTheme {
         intArr = new int[30];
         length = intArr.length;
         for (int i = 0; i < length; i++) {
-            intArr[i] = 60 + (int) (Math.random() * 40);
-            for (int j = 0; j < length; j++) {
+            boolean uniqueNumber = true;
+            int randomNumber = (int) (60 + Math.random() * 40);
+            for (int j = 0; j <= i; j++) {
                 if (i == j) {
                     continue;
-                }
-                if (intArr[i] == intArr[j]) {
+                } else if (intArr[j] == randomNumber) {
+                    uniqueNumber = false;
                     i--;
                     break;
+                }
+            }
+            if (uniqueNumber) {
+                intArr[i] = randomNumber;
+            }
+        }
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (intArr[j] < intArr[i]) {
+                    int temp = intArr[j];
+                    intArr[j] = intArr[i];
+                    intArr[i] = temp;
                 }
             }
         }
         printIntArray(intArr);
 
         System.out.println("\n\n6. Сдвиг элементов массива");
-        String[] stringArr = new String[] {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        length = stringArr.length;
-        int countRemoveIndex = 0;
-        for (int i = 0; i < length; i++) {
-            if (stringArr[i].isBlank()) {
-                countRemoveIndex++;
+        String[] srcStrings = new String[] {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        length = srcStrings.length;
+        int countNotBlankStrings = 0;
+        for (String s : srcStrings) {
+            if (s.isBlank()) {
+                countNotBlankStrings++;
             }
         }
-        String[] stringArrCopy = new String[length - countRemoveIndex];
+        String[] destStrings = new String[length - countNotBlankStrings];
         int countSymbols = 0;
-        int stringArrIndex = 0;
-        int stringArrCopyIndex = 0;
+        int srcPos = 0;
+        int destPos = 0;
         for (int i = 0; i < length; i++) {
-            if (stringArr[i].isBlank()) {
-                System.arraycopy(stringArr, stringArrIndex, stringArrCopy, stringArrCopyIndex, countSymbols);
-                stringArrCopyIndex += countSymbols;
+            if (srcStrings[i].isBlank()) {
+                if (i > 0) {
+                    System.arraycopy(srcStrings, srcPos, destStrings, destPos, countSymbols);
+                }
+                destPos += countSymbols;
                 countSymbols = 0;
-                stringArrIndex = i + 1;
+                srcPos = i + 1;
             } else {
                 countSymbols++;
             }
         }
-        printStringArray(stringArr);
-        printStringArrayCopy(stringArrCopy);
+        printStringArray(srcStrings);
+        printStringArrayCopy(destStrings);
     }
     private static void printIntArray(int[] intArr) {
         for (int i : intArr) {
@@ -126,8 +140,8 @@ public class ArrayTheme {
         System.out.println();
     }
 
-    private static void printStringArrayCopy(String[] stringArrCopy) {
-        for (String s : stringArrCopy) {
+    private static void printStringArrayCopy(String[] destStrings) {
+        for (String s : destStrings) {
             System.out.print(s + " ");
         }
         System.out.println();
