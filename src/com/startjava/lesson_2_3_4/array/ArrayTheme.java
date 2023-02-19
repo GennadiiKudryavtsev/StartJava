@@ -8,22 +8,15 @@ public class ArrayTheme {
         System.out.println("1. Реверс значений массива");
         int[] intArr = {3, 2, 5, 7, 1, 6, 4};
         int length = intArr.length;
-        for (int outputArr : intArr) {
-            System.out.print(outputArr + " ");
+        System.out.println("Исходный массив");
+        printIntArray(intArr);
+        for (int i = 0; i < length; i++) {
+            int temp = intArr[i];
+            intArr[i] = intArr[--length];
+            intArr[length] = temp;
         }
-        System.out.println();
-        for (int i = length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (intArr[j] < intArr[j + 1]) {
-                   int temp = intArr[j + 1];
-                    intArr[j + 1] = intArr[j];
-                    intArr[j] = temp;
-                }
-            }
-        }
-        for (int outputArr : intArr) {
-            System.out.print(outputArr + " ");
-        }
+        System.out.println("\n\nИзмененный массив");
+        printIntArray(intArr);
 
         System.out.println("\n\n2. Вывод произведения элементов массива");
         intArr = new int[10];
@@ -41,40 +34,34 @@ public class ArrayTheme {
         System.out.println("\n3. Удаление элементов массива");
         double[] doubleArr = new double[15];
         length = doubleArr.length;
-        double average = 0;
-        int count = 0;
-        System.out.println("Исходный массив:");
         for (int i = 0; i < length; i++) {
             doubleArr[i] = Math.random();
-            average += doubleArr[i];
         }
-        average = average / length;
-        for (int i = 0; i < 8; i++) {
-            System.out.printf("%7.3f", doubleArr[i]);
-        }
-        System.out.println("\nИзмененный массив:");
-        for (int i = 0; i < 7; i++) {
-            if (doubleArr[i] > doubleArr[(int) average]) {
+        System.out.println("Исходный массив ");
+        printDoubleArray(doubleArr);
+        int count = 0;
+        double middleCellValue = doubleArr[length / 2];
+        System.out.println("\nИзмененный массив ");
+        for (int i = 0; i < length; i++) {
+            if (doubleArr[i] > middleCellValue) {
                 doubleArr[i] = 0;
                 count++;
             }
-            System.out.printf("%7.3f", doubleArr[i]);
         }
-        System.out.println("\nКоличество обнуленных ячеек: " + count);
+        printDoubleArray(doubleArr);
+        System.out.println("\nКоличество обнуленных ячеек - " + count);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
         length = 26;
         char[] alphabet = new char[length];
         for (int i = 0; i < length; i++) {
-            alphabet[i] = (char) ('A' + i);
+            alphabet[i] = (char) ('Z' - i);
         }
-        for (int i = 0; i < length; i++) {
-            for (int j = length - 1; j >= i; j--) {
-                if (j >= i) {
-                    System.out.print(alphabet[j]);
-                } else {
-                    break;
-                }
+        int countIndex = 0;
+        for (int j = alphabet.length; j > 0 ; j--) {
+            countIndex++;
+            for (int k = 0; k < countIndex; k++) {
+                System.out.print(alphabet[k]);
             }
             System.out.println();
         }
@@ -94,9 +81,7 @@ public class ArrayTheme {
                 }
             }
         }
-        for (int outputArr : intArr) {
-            System.out.print(outputArr + " ");
-        }
+        printIntArray(intArr);
 
         System.out.println("\n\n6. Сдвиг элементов массива");
         String[] stringArr = new String[] {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
@@ -121,7 +106,37 @@ public class ArrayTheme {
                 countSymbols++;
             }
         }
-        System.out.println(Arrays.toString(stringArr));
-        System.out.println(Arrays.toString(stringArrCopy));
+        printStringArray(stringArr);
+        printStringArrayCopy(stringArrCopy);
+    }
+    private static void printIntArray(int[] intArr) {
+        for (int i : intArr) {
+            System.out.print(i + " ");
+        }
+    }
+
+    private static void printDoubleArray(double[] doubleArray) {
+        int length = doubleArray.length;
+        for (int i = 0; i < length; i++) {
+            System.out.printf("%.3f ", doubleArray[i]);
+            if (i == 7) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    private static void printStringArrayCopy(String[] stringArrCopy) {
+        for (String s : stringArrCopy) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
+    }
+
+    private static void printStringArray(String[] stringArr) {
+        for (String s : stringArr) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
     }
 }
