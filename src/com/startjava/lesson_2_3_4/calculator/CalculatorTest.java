@@ -7,22 +7,25 @@ public class CalculatorTest {
         String userResponse = "yes";
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        while (!userResponse.equals("no")) {
-            System.out.println("Введите первое число: ");
-            calculator.setNumber1(scanner.nextInt());
-            System.out.println("Введите знак математической операции: ");
-            calculator.setOperation(scanner.next().charAt(0));
-            System.out.println("Введите второе число: ");
-            calculator.setNumber2(scanner.nextInt());
-            calculator.calculate();
-            userResponse = scanner.nextLine();
-            while (!userResponse.equals("yes")) {
-                if (userResponse.equals("no")) {
-                    break;
+        do {
+            if (userResponse.equals("yes")) {
+                System.out.print("Введите математическое выражение: ");
+                String input = scanner.nextLine();
+                String[] arraySplit = input.split(" ");
+                calculator.setNumber1(Integer.parseInt(arraySplit[0]));
+                calculator.setOperation(arraySplit[1].charAt(0));
+                calculator.setNumber2(Integer.parseInt(arraySplit[2]));
+                if (calculator.calculate() == 0.0) {
+                    System.out.println((int) calculator.calculate());
+                } else {
+                    System.out.println("Результат: " + calculator.calculate());
                 }
-                System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                userResponse = scanner.nextLine();
             }
-        }
+            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+            userResponse = scanner.nextLine();
+            if (userResponse.equals("no")) {
+                break;
+            }
+        } while (!userResponse.equals("no"));
     }
 }
