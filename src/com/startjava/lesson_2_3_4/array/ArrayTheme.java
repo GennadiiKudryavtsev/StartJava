@@ -74,7 +74,8 @@ public class ArrayTheme {
             for (int j = 0; j <= i; j++) {
                 if (i == j) {
                     continue;
-                } else if (intArr[j] == randomNumber) {
+                }
+                if (intArr[j] == randomNumber) {
                     uniqueNumber = false;
                     i--;
                     break;

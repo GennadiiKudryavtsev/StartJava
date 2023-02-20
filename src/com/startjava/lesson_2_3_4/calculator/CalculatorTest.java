@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
+
 public class CalculatorTest {
 
     public static void main(String[] args) {
@@ -11,21 +12,15 @@ public class CalculatorTest {
             if (userResponse.equals("yes")) {
                 System.out.print("Введите математическое выражение: ");
                 String input = scanner.nextLine();
-                String[] arraySplit = input.split(" ");
-                calculator.setNumber1(Integer.parseInt(arraySplit[0]));
-                calculator.setOperation(arraySplit[1].charAt(0));
-                calculator.setNumber2(Integer.parseInt(arraySplit[2]));
-                if (calculator.calculate() == 0.0) {
-                    System.out.println((int) calculator.calculate());
+                calculator.calculate(input);
+                if (calculator.calculate(input) == 0.0) {
+                    System.out.println((int) calculator.calculate(input));
                 } else {
-                    System.out.println("Результат: " + calculator.calculate());
+                    System.out.println("Результат: " + calculator.calculate(input));
                 }
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
             userResponse = scanner.nextLine();
-            if (userResponse.equals("no")) {
-                break;
-            }
         } while (!userResponse.equals("no"));
     }
 }
