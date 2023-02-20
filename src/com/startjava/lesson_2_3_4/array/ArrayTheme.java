@@ -110,7 +110,7 @@ public class ArrayTheme {
         int destPos = 0;
         for (int i = 0; i < length; i++) {
             if (srcStrings[i].isBlank()) {
-                if (i > 0) {
+                if (countSymbols > 0) {
                     System.arraycopy(srcStrings, srcPos, destStrings, destPos, countSymbols);
                 }
                 destPos += countSymbols;
