@@ -19,35 +19,28 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public double calculate(String input) {
-        writeToArrayExpression(input);
+    public double calculate(String expression) {
+        parseExpression(expression);
         switch (operation) {
             case '+':
-                result = Math.addExact(number1, number2);
-                break;
+                return Math.addExact(number1, number2);
             case '-':
-                result = Math.subtractExact(number1, number2);
-                break;
+                return Math.subtractExact(number1, number2);
             case '*':
-                result = Math.multiplyExact(number1, number2);
-                break;
+                return Math.multiplyExact(number1, number2);
             case '/':
-                result = Math.floorDiv(number1, number2);
-                break;
+                return Math.floorDiv(number1, number2);
             case '^':
-                result = (int) Math.pow(number1, number2);
-                break;
+                return (int) Math.pow(number1, number2);
             case '%':
-                result = Math.floorMod(number1, number2);
-                break;
-        }
-        return result;
+                return Math.floorMod(number1, number2);
+        } return 0;
     }
 
-    private void writeToArrayExpression(String input) {
-        String[] arraySplit = input.split(" ");
-        number1 = Integer.parseInt(arraySplit[0]);
-        operation = arraySplit[1].charAt(0);
-        number2 =Integer.parseInt(arraySplit[2]);
+    private void parseExpression(String expression) {
+        String[] patrsExpression = expression.split(" ");
+        number1 = Integer.parseInt(patrsExpression[0]);
+        operation = patrsExpression[1].charAt(0);
+        number2 =Integer.parseInt(patrsExpression[2]);
     }
 }    

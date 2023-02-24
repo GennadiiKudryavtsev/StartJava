@@ -11,12 +11,12 @@ public class CalculatorTest {
         do {
             if (userResponse.equals("yes")) {
                 System.out.print("Введите математическое выражение: ");
-                String input = scanner.nextLine();
-                calculator.calculate(input);
-                if (calculator.calculate(input) == 0.0) {
-                    System.out.println((int) calculator.calculate(input));
+                String expression = scanner.nextLine();
+                double result = calculator.calculate(expression);
+                if (result == 0.0) {
+                    System.out.println((int) result);
                 } else {
-                    System.out.println("Результат: " + calculator.calculate(input));
+                    System.out.println("Результат: " + result);
                 }
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
