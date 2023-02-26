@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Player {
 
     private String name;
-    private int[] enteredNums = new int[10];
+    private int[] num = new int[10];
     private int attempt;
 
     public Player(String name) {
@@ -20,21 +20,21 @@ public class Player {
         return attempt;
     }
 
-    public void addEnteredNums(int enteredNum) {
-        enteredNums[attempt] = enteredNum;
+    public void addEnteredNum(int enteredNum) {
+        num[attempt] = enteredNum;
         attempt++;
     }
 
-    public int[] getEnteredNums() {
-        return Arrays.copyOf(enteredNums, attempt);
+    public int[] getEnteredNum() {
+        return Arrays.copyOf(num, attempt);
     }
 
     public void clearAttempts() {
-        Arrays.fill(enteredNums, 0, attempt,  0);
+        Arrays.fill(num, 0, attempt,  0);
         attempt = 0;
     }
 
-    public int getLastEnteredNums() {
-        return enteredNums[attempt - 1];
+    public int getLastEnteredNum() {
+        return num[attempt - 1];
     }
 }
