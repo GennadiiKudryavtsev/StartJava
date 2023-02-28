@@ -53,7 +53,7 @@ public class GuessNumber {
 
     private void printEnteredNums(Player player) {
         System.out.print("Игрок " + player.getName() + " вводил числа: ");
-        int[] enteredNums = player.getEnteredNum();
+        int[] enteredNums = player.getEnteredNums();
         for (int num : enteredNums) {
             System.out.printf("%1d %s", num, " ");
         }
